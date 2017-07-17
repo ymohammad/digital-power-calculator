@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Digital Power Calculator</title>
+  
+  
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Syncopate'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class = "calculator_div_parent text-center" >
+			 <div class="calculator_div">
+			 	<p class="head_style">AlySufiyan Software Labs</p>
+			 	<input class="calculator_screen" type="text" id="cal_ans" disabled="disabled">
+			 	<div class="cals_name_div">
+			 		Digital Power Calculator
+			 	</div>
+			 	
+			 	<div class="row button_row_style">
+			 		<button>7</button>
+			 		<button>8</button>
+			 		<button>9</button>
+			 		<button>x</button>
+			 		<button>÷</button>
+			 	</div>
+			 	<div class="row button_row_style">
+			 		<button>4</button>
+			 		<button>5</button>
+			 		<button>6</button>
+			 		<button>-</button>
+			 		<button>&radic;<span style="text-decoration: overline">&nbsp;</span></button>
+			 	</div>
+			 	<div class="row button_row_style">
+			 		<button>1</button>
+			 		<button>2</button>
+			 		<button>3</button>
+			 		<button>+</button>
+			 		<button>%</button>
+			 	</div>
+			 	<div class="row button_row_style">
+			 		<button>0</button>
+			 		<button>.</button>
+			 		<button>=</button>
+			 		<button class="red_button">AC</button>
+			 		<button class="red_button">CE</button>
+			 	</div>
+			 	<div class="row div_error_msg" id="error_div_id"></div>
+			 </div>
+		</div>
+		
+		<input type="hidden" id="output_id">
+<br>
+<footer class="site-footer">
+<div>Developed by <a href="https://www.linkedin.com/in/mohammad-sufiyan-al-yousufi-0279743a" target="_blank">Mohammad Sufiyan Al Yousufi</a>.<br>Contact information: <a href="mailto:mdsufyan2005@gmail.com">mdsufyan2005@gmail.com</a><br>
+  © 2016 AlySufiyan Software Development Labs </div>
+</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript">
+		var operationStr = "";
+		var newOperation = true;
+		var sqrootOpr = false;
+		
+		$("button").click(function(){
+				var enteredValue = $(this).text();
+				var screenVal = $("#cal_ans").val();
+				
+				if($(this).isInvalidInput(enteredValue)) {
+					$(this).clearScreen();
+					return;
+				}
+				
+				if(enteredValue === "CE" || enteredValue === "AC") {
+					
+					$(this).clearScreen();
+					
+				} else if(enteredValue === "=") {
+					
+					if(sqrootOpr) {
+						operationStr = operationStr + ")";
+						sqrootOpr = false;
+					}
+					
+					try {
+						
+						var calValue = math.eval(operationStr);
+						$("#cal_ans").val(calValue);
+						$("#output_id").val(operationStr+" = " + calValue);
+						newOperation = true;
+					}
+					catch(excObj) {
+						$("#error_div_id").text("Error: " + excObj);
+					}
+					
+					
+				} else {
+					
+					if(newOperation) {
+						$(this).clearScreen();
+					}
+					newOperation = false;
+					screenVal = $("#cal_ans").val();
+					$("#cal_ans").val(screenVal+enteredValue);
+					operationStr = operationStr + $(this).resolveNGetMathExp(enteredValue);
+				} 
+				
+				
+				//
+				//alert(">>>> " + (math.eval($("#cal_ans").val())));
+			});
+		
+		</script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.5.0/math.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

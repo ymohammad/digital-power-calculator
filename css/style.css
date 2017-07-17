@@ -1,0 +1,109 @@
+body {
+				background-color: #457fca
+			}
+			
+			.head_style {
+				font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+			    font-size: 18px;
+			    line-height: 40px;
+			    text-align: center;
+			    font-weight: bold;
+			    color: #4d0000;
+			}
+			.calculator_div_parent {
+			
+				width: 100%;
+			    padding-top: 100px;
+			    padding-left: 35%;
+				
+			}
+			.calculator_div {
+				background-color: rgb(253,246,185);
+				text-align: center;
+				height:350px; 
+				width:420px	;
+				border-radius:10px;
+				-webkit-box-shadow: 0 0 10px #888888;
+       			box-shadow: inset 2px 2px 10px #000000;
+				border-collapse:collapse;
+				margin:5px;
+			}
+			.cals_name_div {
+				background-color: #4d0000;
+			    color: white;
+			    text-align: left;
+			    width: 363px;
+			    margin-top: 10px;
+			    margin-bottom: 10px;
+			    padding: 4px;
+			    font-family: 'Syncopate';
+			    font-weight: bolder;
+			    margin-left: 27px;
+			    font-size: 10px;
+			    font-style: italic;
+			}
+			.calculator_screen {
+				height: 40px;
+				width:365px;
+				border-radius:5px;
+			    padding: 0 5px;
+			    background: rgba(0, 0, 0, 0.8);
+			    line-height: 40px;
+			    color: white;
+			    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+			    text-align: right;
+			    letter-spacing: 1px;
+			    font-size: 20px;
+    			font-weight: bold;
+    			font-family: 'Lucida Bright', Georgia, serif;
+			}
+			.button_row_style {
+				overflow: hidden;
+			}
+			button {
+			    position: relative;
+			    top: 0;
+			    cursor: pointer;
+			    width: 66px;
+			    height: 36px;
+			    background: black;
+			    border-radius: 10px;
+			    box-shadow: -2px 3px rgba(0, 0, 0, 0.5);
+			    margin: 0 2px 10px 2px;
+			    color: white;
+			    line-height: 36px;
+			    text-align: center;
+			    -webkit-user-select: none;
+			    transition: all 0.2s ease;
+			    font-family: 'Lucida Bright', Georgia, serif;
+			    font-weight: bold;
+			    font-size: 15px;
+			}
+			button:HOVER {
+				background: #3399FF; //#0FE6EB; //#FACC2E; //rgb(249,233,93);
+				color:black;
+				box-shadow: -2px 3px black;
+				font-weight:bolder;
+			}
+			.big_button {
+				height: 65px;
+			    float: right;
+			    margin-right: 24px;
+			    margin-left: -8px;
+			}
+			.red_button {
+				background: #CD0606;
+				color:white;
+			}
+			.div_error_msg {
+				color: #D8000C;
+				
+			}
+.site-footer {
+	background-color: #000;
+    border-top: 1px solid #333;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+	padding: 15px 0;
+}

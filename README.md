@@ -1,5 +1,5 @@
 # Digital Power Calculator
-Sample Calculator Using Javascript.
+Digital Calculator Using Javascript.
 
 ![alt text](https://github.com/ymohammad/digital-power-calculator/blob/master/uidesign.PNG?raw=true)
 
